@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Dates</title>
+
+<script> 
+    window.onload = function()
+    {
+        var today = new Date();
+        document.getElementById('result').innerHTML = today.toDateString();
+        var dob = new Date("Novemer 21, 1982 12:00:00");
+        //document.getElementById('result').innerHTML = dob;
+        //var epoch = new Date(8970000000);
+        document.getElementById('result').innerHTML = epoch;
+        //methods to set dates. if you wanted to display a date object automatically convert it to a string with a toString method
+        
+        //today i learned
+        //date object and displayed todays date
+        //used Uniform time code
+        //unix epoch date seconds since january 1 1970
+        //used toString, toUTCString, toDatestring toconvert how date appears
+    }
+</script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+

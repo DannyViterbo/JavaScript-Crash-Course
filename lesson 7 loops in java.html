@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Loops</title>
+<script>
+    window.onload=function()
+    {
+        var x = 50;
+        while (x > 0) //while loop
+            {
+                document.getElementById('result').innerHTML += "<h2>" + x + "<h2>";
+                x--; //1means minus 1 to x 
+                     //x++ means add 1 to x
+            }
+        
+        for(var y=0; y < 500; y=y+20) //for loops more compact.  contination condition, initialization and counter all in one place
+            {
+                console.log(y);
+            }
+        
+        /*while (input != "XXX") //!= means does not equal 
+            {
+                var input = prompt("Enter your value");
+                alert("continue");
+            }     
+        */
+    }
+</script>
+</head>
+<body>
+    <div id="result"></div>
+</body>

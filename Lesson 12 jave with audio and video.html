@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>Audio</title>
+    <script> 
+        var player;
+        
+        window.onload = function()
+        {//get the player object, thats id'd as player below
+            player = document.getElementById('player');
+        //set the source attribute to the mp3 file
+            player.src = "Borrtex_-_05_-_Rainbow.mp3";
+        //on the button we set a click event to call the function playmusic
+            document.getElementById('btnPlay').addEventListener('click', playMusic, false);  
+            document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
+            document.getElementById('btnStop').addEventListener('click', stopMusic, false);
+            //the change event only works after you move and let go of the mouse. the input event works dynamically
+            
+            document.getElementById('volumeSlider').addEventListener('input', changeVolume, false);
+            
+        }
+        
+        function changeVolume(e)
+        {
+            player.volume = document.getElementById('volumeSlider').value;
+        }
+        
+        // this function simply tells the player to run the play command
+        function playMusic(e)
+        {
+            player.play();
+        }
+        
+        //the (e)means that this function will recieve the click event that preceeds it
+        function pauseMusic(e)
+        {
+            player.pause();
+        }
+        
+        function stopMusic(e)
+        {
+            player.pause();
+            player.currentTime= 0;
+        }
+        //for this to work for video, just change the audio tag below to video and it works the same way
+    </script>
+</head>
+<body>
+    <audio id="player"></audio>
+    <button id="btnPlay">Play</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnStop">Stop</button><br/>
+    <input type="range" min="0" max="1" step=".01" id="volumeSlider"/>
+</body>
